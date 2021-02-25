@@ -27,3 +27,10 @@ message OpResponse{
     // UserInfo with additional information to show to the user.
     string user_info = 2;
 }
+
+message ErrorDetails {
+    // The stack trace entries indicating where the error occurred.
+    repeated string stack_entries = 1;
+    // Additional debugging information provided by the server.
+    string detail = 2;
+}
