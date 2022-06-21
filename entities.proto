@@ -60,3 +60,18 @@ message GenericRemoveRequest{
     string name = 3 [(validate.rules).string.min_len = 1];
 }
 
+// GetGenericEntityRequest wit the information requiered to ask for an entity in an environment
+// This message is different as the GetEntityRequest found in account-manager because in this case 
+// we dont need any informacion about the account
+message GetGenericEntityRequest{
+    // UserId with the user identifier
+    string user_id = 1 [(validate.rules).string.min_len = 1];
+    // EnvironmentId with the environment identifier
+    string environment_id = 2 [(validate.rules).string.min_len = 1];
+    // name with the entity name (it is unique by environment)
+    string name = 3 [(validate.rules).string.min_len = 1];
+    // IncludeYAMLConversion determines if the raw YAML representation is also included.
+    bool include_yaml_conversion = 4;
+    // IncludeJSONConversion determines if the raw JSON representation is also included.
+    bool include_json_conversion = 5;
+}
