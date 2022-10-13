@@ -9,6 +9,10 @@ import "validate/validate.proto";
 message EmptyRequest{
 }
 
+// Empty message as required by gRPC for services not requiring any parameters.
+message Empty{
+}
+
 // OpStatus enumeration defining the possible status of an operation.
 enum OpStatus{
     // Unknown operation status indicates an error in the processing of the request as all operations should
